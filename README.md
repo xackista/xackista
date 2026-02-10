@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Hi 👋, I'm Zaki — Platform / DevOps Engineer</h1>
+  <h1>Hi 👋, I'm Zaki — Platform / Systems / DevOps Engineer</h1>
   <p>
     <strong>Building reliable, scalable infrastructure • Kubernetes • OpenShift • Ceph • GitOps</strong>
   </p>
@@ -20,7 +20,7 @@
 | **Production-grade Ceph Storage Cluster** | Deployed 3–node Ceph (or 5–node) cluster with proper CRUSH maps, PG tuning, RGW, CephFS, RBD | Ceph, Rook or manual, monitoring (Prometheus + Grafana) | [Repo →](https://github.com/yourusername/ceph-production-cluster) |
 | **Vanilla Kubernetes Cluster from Scratch** | Kubeadm / kops / manual HA control-plane, Calico / Cilium CNI, metrics-server, cluster autoscaler prep | kubeadm, containerd/CRI-O, kubectl, Helm | [Repo →](https://github.com/yourusername/kubernetes-homelab-prodgrade) |
 | **OpenShift 4.x Cluster** | Installed & configured OpenShift (IPI/UPI), operators, MachineSets, custom SCCs, built-in monitoring | OpenShift Installer, oc CLI, operators (Ceph via ODF/OCS), GitOps (ArgoCD?) | [Repo →](https://github.com/yourusername/openshift-deployment-blueprint) |
-| **GitOps / ArgoCD on Kubernetes/OpenShift** | (optional but very strong) GitOps-managed apps & infra | ArgoCD, Helm, Kustomize | Add if you have it |
+#| **GitOps / ArgoCD on Kubernetes/OpenShift** | (optional but very strong) GitOps-managed apps & infra | ArgoCD, Helm, Kustomize | Add if you have it |
 
 ## 🔥 Highlights from Real Work
 
@@ -42,8 +42,8 @@
 
 ## 📊 Let's Connect
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Zaki-blue?style=flat&logo=linkedin)](https://linkedin.com/in/your-profile)  
-[![Email](https://img.shields.io/badge/Email-📧-orange?style=flat)](mailto:your.email@example.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Zaki-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/zaki-zahid-a108087a/)  
+[![Email](https://img.shields.io/badge/Email-📧-orange?style=flat)](mailto:zaki_zahid@hotmail.com)
 
 <p align="center">
   <i>Updating monthly with new battle-tested patterns • Last updated Feb 2026</i>
