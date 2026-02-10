@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Hi 👋, I'm Zaki — Platform / Systems / DevOps Engineer</h1>
   <p>
-    <strong>Building reliable, scalable infrastructure • Kubernetes • OpenShift • Ceph • GitOps</strong>
+    <strong>Building reliable, scalable infrastructure • Kubernetes • OpenShift • GitOps • MLOps • Ceph </strong>
   </p>
 
   <!-- Badges -->
@@ -19,8 +19,8 @@
 |--------|-------------|--------------|--------|
 | **Production-grade Ceph Storage Cluster** | Deployed 3–node Ceph (or 5–node) cluster with proper CRUSH maps, PG tuning, RGW, CephFS, RBD | Ceph, Rook or manual, monitoring (Prometheus + Grafana) | [Repo →](https://github.com/yourusername/ceph-production-cluster) |
 | **Vanilla Kubernetes Cluster from Scratch** | Kubeadm / kops / manual HA control-plane, Calico / Cilium CNI, metrics-server, cluster autoscaler prep | kubeadm, containerd/CRI-O, kubectl, Helm | [Repo →](https://github.com/yourusername/kubernetes-homelab-prodgrade) |
-| **OpenShift 4.x Cluster** | Installed & configured OpenShift (IPI/UPI), operators, MachineSets, custom SCCs, built-in monitoring | OpenShift Installer, oc CLI, operators (Ceph via ODF/OCS), GitOps (ArgoCD?) | [Repo →](https://github.com/yourusername/openshift-deployment-blueprint) |
-##| **GitOps / ArgoCD on Kubernetes/OpenShift** | (optional but very strong) GitOps-managed apps & infra | ArgoCD, Helm, Kustomize | Add if you have it |
+| **OpenShift 4.x Cluster** | Installed & configured OpenShift (IPI/UPI), operators, MachineSets, custom SCCs, built-in monitoring | OpenShift Installer, oc CLI, operators (Ceph via ODF/OCS), GitOps (ArgoCD) | [Repo →](https://github.com/yourusername/openshift-deployment-blueprint) |
+<!-- | **GitOps / ArgoCD on Kubernetes/OpenShift** | (optional but very strong) GitOps-managed apps & infra | ArgoCD, Helm, Kustomize | Add if you have it | -->
 
 ## 🔥 Highlights from Real Work
 
@@ -34,7 +34,7 @@
 
 **Orchestration:** Kubernetes, OpenShift  
 **Storage:** Ceph (Rook/ODF), Longhorn, NFS  
-**CI/CD & GitOps:** GitHub Actions, ArgoCD, Tekton (if used)  
+**CI/CD & GitOps:** GitLab, ArgoCD, Tekton  
 **IaC:** Terraform / OpenTofu, Ansible  
 **Observability:** Prometheus, Grafana, Loki, Alertmanager  
 **Networking:** Cilium, Calico, Multus  
