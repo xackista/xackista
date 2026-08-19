@@ -1,0 +1,15 @@
+---
+- name: Configure Linux baseline
+  hosts: linux
+  become: true
+  gather_facts: true
+
+  roles:
+    - linux-baseline
+    - security-baseline
+    - monitoring-agent
+
+# Recommended execution flow:
+# ansible-playbook --syntax-check site.yml
+# ansible-playbook site.yml --check --diff
+# ansible-playbook site.yml
