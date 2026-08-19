@@ -1,0 +1,32 @@
+groups:
+  - name: linux-host
+    rules:
+      - alert: HostDown
+        expr: up{job="node"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: Linux host is unavailable
+          description: "The node exporter target has been unreachable for more than 2 minutes."
+          runbook: "Check network reachability, node_exporter service and host availability."
+
+      - alert: FilesystemLowSpace
+        expr: (node_filesystem_avail_bytes{fstype!~"tmpfs|overlay"} / node_filesystem_size_bytes{fstype!~"tmpfs|overlay"}) < 0.10
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: Filesystem has less than 10% free space
+          description: "Investigate large files, log growth and application retention policies."
+          runbook: "Check df -hT, du and application/log rotation before deleting anything."
+
+      - alert: HighLoad
+        expr: node_load15 > 4
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: Sustained high Linux load
+          description: "Investigate CPU saturation, I/O wait and processes contributing to load."
+          runbook: "Check uptime, top, vmstat, iostat and process state before remediation."
