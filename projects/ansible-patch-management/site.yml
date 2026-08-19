@@ -1,0 +1,21 @@
+---
+- name: Controlled Linux patch workflow
+  hosts: linux
+  become: true
+  serial: 1
+  pre_tasks:
+    - name: Capture uptime
+      ansible.builtin.command: uptime
+      changed_when: false
+      register: uptime_result
+    - name: Show uptime
+      ansible.builtin.debug:
+        var: uptime_result.stdout
+  tasks:
+    - name: Update packages
+      ansible.builtin.package:
+        name: "*"
+        state: latest
+    - name: Report completion
+      ansible.builtin.debug:
+        msg: "Patch operation completed for {{ inventory_hostname }}"

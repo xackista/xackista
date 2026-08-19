@@ -1,0 +1,22 @@
+frontend api
+    bind *:6443
+    mode tcp
+    default_backend api_servers
+
+backend api_servers
+    mode tcp
+    balance roundrobin
+    server master1 192.0.2.31:6443 check
+    server master2 192.0.2.32:6443 check
+    server master3 192.0.2.33:6443 check
+
+frontend ingress
+    bind *:443
+    mode tcp
+    default_backend ingress_servers
+
+backend ingress_servers
+    mode tcp
+    balance roundrobin
+    server worker1 192.0.2.41:443 check
+    server worker2 192.0.2.42:443 check

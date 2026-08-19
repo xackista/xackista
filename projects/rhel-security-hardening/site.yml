@@ -1,0 +1,23 @@
+---
+- name: RHEL security baseline
+  hosts: rhel
+  become: true
+  tasks:
+    - name: Install packages
+      ansible.builtin.dnf:
+        name: [audit, chrony]
+        state: present
+    - name: Enforce SELinux
+      ansible.posix.selinux:
+        policy: targeted
+        state: enforcing
+    - name: Enable firewalld
+      ansible.builtin.service:
+        name: firewalld
+        enabled: true
+        state: started
+    - name: Enable auditd
+      ansible.builtin.service:
+        name: auditd
+        enabled: true
+        state: started
