@@ -1,0 +1,58 @@
+---
+- name: Apply Linux security baseline
+  hosts: rhel
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Install security tooling
+      ansible.builtin.package:
+        name:
+          - aide
+          - audit
+          - policycoreutils-python-utils
+        state: present
+
+    - name: Ensure SELinux is enforcing
+      ansible.posix.selinux:
+        policy: targeted
+        state: enforcing
+
+    - name: Enable auditd
+      ansible.builtin.service:
+        name: auditd
+        enabled: true
+        state: started
+
+    - name: Deploy audit rules
+      ansible.builtin.copy:
+        src: ../auditd/rules/50-security-baseline.rules
+        dest: /etc/audit/rules.d/50-security-baseline.rules
+        owner: root
+        group: root
+        mode: '0600'
+      notify: Restart auditd
+
+    - name: Validate SSH configuration
+      ansible.builtin.command: sshd -t
+      changed_when: false
+
+    - name: Enable firewalld
+      ansible.builtin.service:
+        name: firewalld
+        enabled: true
+        state: started
+
+    - name: Check current SELinux state
+      ansible.builtin.command: getenforce
+      register: selinux_state
+      changed_when: false
+
+    - name: Report security baseline state
+      ansible.builtin.debug:
+        msg: "SELinux={{ selinux_state.stdout }}"
+
+  handlers:
+    - name: Restart auditd
+      ansible.builtin.command: service auditd restart
+      changed_when: true
