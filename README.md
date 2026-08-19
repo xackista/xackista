@@ -25,6 +25,8 @@ I specialize in enterprise Linux, virtualization, container platforms, infrastru
 
 ## ⭐ Featured Projects
 
+👉 [**Browse the detailed project index →**](PROJECTS.md)
+
 - [☸️ Kubernetes HA Lab](projects/kubernetes-ha-lab) — HA control plane, VIP, RBAC, workloads, storage and troubleshooting
 - [🔴 OpenShift on VMware](projects/openshift-vmware) — UPI architecture, RHCOS, Ignition, HAProxy, DNS and certificates
 - [💾 Ceph + Kubernetes CSI](projects/ceph-kubernetes-csi) — RBD, CSI, PVCs and storage troubleshooting

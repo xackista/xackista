@@ -1,5 +1,51 @@
-# 🤖 Ansible Patch Management
+# 🤖 Ansible Enterprise Patch Management
 
-**Inventory → Pre-checks → Patch → Reboot if required → Post-checks → Report**
+## Objective
+Automate Linux patching while minimizing blast radius and providing pre/post validation.
 
-Use `serial` to control rollout size and reduce blast radius. Validate connectivity, disk space, kernel, critical services and application health before/after patching.
+## Workflow
+```text
+Inventory → Pre-check → Patch small batch → Reboot → Health check → Next batch → Report
+```
+
+## Pre-checks
+
+```bash
+ansible linux -m ping
+ansible linux -m command -a 'uptime'
+ansible linux -m command -a 'df -h'
+ansible linux -m command -a 'uname -r'
+ansible linux -m shell -a 'systemctl --failed'
+```
+
+## Dry Run
+
+```bash
+ansible-playbook site.yml --check --diff
+```
+
+## Controlled Rollout
+
+The playbook uses:
+
+```yaml
+serial: 1
+```
+
+Process one node at a time initially. Increase the batch only after the workflow is proven.
+
+## Patch
+
+```bash
+ansible-playbook site.yml
+```
+
+## Post-check
+
+```bash
+ansible linux -m ping
+ansible linux -m command -a 'uname -r'
+ansible linux -m shell -a 'systemctl --failed'
+```
+
+Production considerations include maintenance windows, cluster sequencing, application dependencies, reboot requirements, repository availability, rollback strategy and change approval.
