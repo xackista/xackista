@@ -6,7 +6,8 @@ Demonstrate Linux HA concepts using Corosync for membership/communication and Pa
 ## Architecture
 ```text
         Application Resource
-              /                 Node-01    Node-02
+             |         |
+          Node-01    Node-02
               \       /
               Cluster
                  |
