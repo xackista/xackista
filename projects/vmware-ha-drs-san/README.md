@@ -6,7 +6,8 @@ Demonstrate the complete virtualization stack: vCenter, ESXi, cluster availabili
 ## Architecture
 ```text
                      vCenter
-                    /                       ESXi-01    ESXi-02
+                    /        \
+                ESXi-01    ESXi-02
                    |          |
               VMkernel    VMkernel
                    \          /
