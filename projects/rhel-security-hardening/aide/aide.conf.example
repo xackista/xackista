@@ -1,0 +1,28 @@
+# Example AIDE policy for a RHEL security baseline.
+# Review paths for the target system before deployment.
+
+@@define DBDIR /var/lib/aide
+@@define LOGDIR /var/log/aide
+
+report_url=file:@@{LOGDIR}/aide-report.log
+
+NORMAL = p+i+n+u+g+s+m+c+acl+xattrs+sha512
+
+/bin NORMAL
+/sbin NORMAL
+/usr/bin NORMAL
+/usr/sbin NORMAL
+/etc NORMAL
+!/etc/mtab
+!/etc/aide.conf
+!/var/log
+!/var/cache
+!/var/tmp
+!/tmp
+
+# Example high-value security files
+/etc/passwd NORMAL
+/etc/shadow NORMAL
+/etc/group NORMAL
+/etc/sudoers NORMAL
+/etc/ssh/sshd_config NORMAL
