@@ -1,0 +1,32 @@
+groups:
+  - name: infrastructure
+    rules:
+      - alert: HostDown
+        expr: up{job="node"} == 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: Host is unreachable
+          description: Node exporter has been unreachable for more than 5 minutes.
+          runbook: Check network reachability, exporter service, firewall and host health.
+
+      - alert: FilesystemCapacityHigh
+        expr: (node_filesystem_avail_bytes{fstype!~"tmpfs|overlay"} / node_filesystem_size_bytes{fstype!~"tmpfs|overlay"}) < 0.10
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: Filesystem has less than 10% free space
+          description: Investigate growth, logs, deleted-open files and retention policies.
+          runbook: Check df, du, journal size, application logs and cleanup policy.
+
+      - alert: HighLoad
+        expr: node_load15 > (count by (instance) (node_cpu_seconds_total{mode="idle"}) * 1.5)
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: Sustained high system load
+          description: Load is significantly above the available CPU capacity.
+          runbook: Check CPU saturation, I/O wait, D-state processes, memory pressure and dependencies.
