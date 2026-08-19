@@ -1,0 +1,27 @@
+# Example auditd rules for a RHEL security baseline.
+# Validate against the target's approved security policy before deployment.
+
+# Identity and authentication changes
+-w /etc/passwd -p wa -k identity
+-w /etc/group -p wa -k identity
+-w /etc/shadow -p wa -k identity
+-w /etc/security/ -p wa -k auth_policy
+
+# Privilege configuration
+-w /etc/sudoers -p wa -k privilege
+-w /etc/sudoers.d/ -p wa -k privilege
+
+# SSH configuration
+-w /etc/ssh/sshd_config -p wa -k ssh_config
+
+# Network/firewall configuration
+-w /etc/firewalld/ -p wa -k firewall
+
+# SELinux configuration
+-w /etc/selinux/ -p wa -k selinux
+
+# Time configuration
+-w /etc/chrony.conf -p wa -k time_config
+
+# Example privileged command auditing; tune paths for the target OS.
+-a always,exit -F arch=b64 -S setuid,setgid -F auid>=1000 -F auid!=unset -k identity_change
