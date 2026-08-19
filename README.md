@@ -1,50 +1,77 @@
-<div align="center">
-  <h1>Hi 👋, I'm Zaki — Platform / Systems / DevOps Engineer</h1>
-  <p>
-    <strong>Building reliable, scalable infrastructure • Kubernetes • OpenShift • GitOps • MLOps • Ceph </strong>
-  </p>
+# ⚙️ Infrastructure Engineering Portfolio
 
-  <!-- Badges -->
-  <p>
-    <img src="https://img.shields.io/badge/Kubernetes-Expert-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
-    <img src="https://img.shields.io/badge/OpenShift-Administrator-red?style=for-the-badge&logo=redhatopenshift&logoColor=white" />
-    <img src="https://img.shields.io/badge/Ceph-Storage_Expert-9900ff?style=for-the-badge&logo=ceph&logoColor=white" />
-    <img src="https://img.shields.io/badge/Platform_Engineering-Production_Grade-00C4B4?style=for-the-badge" />
-  </p>
-</div>
+## Zaki Zahid — Senior Systems & DevOps Engineer
 
-## 🛠️ What I've Built & Operated
+**8+ years | Linux | RHEL | VMware | Kubernetes | OpenShift | Ansible | Terraform | Ceph | CI/CD | Monitoring**
 
-| Project | Description | Technologies | Status |
-|--------|-------------|--------------|--------|
-| **Production-grade Ceph Storage Cluster** | Deployed 3–node Ceph (or 5–node) cluster with proper CRUSH maps, PG tuning, RGW, CephFS, RBD | Ceph, Rook or manual, monitoring (Prometheus + Grafana) | [Repo →](https://github.com/yourusername/ceph-production-cluster) |
-| **Vanilla Kubernetes Cluster from Scratch** | Kubeadm / kops / manual HA control-plane, Calico / Cilium CNI, metrics-server, cluster autoscaler prep | kubeadm, containerd/CRI-O, kubectl, Helm | [Repo →](https://github.com/yourusername/kubernetes-homelab-prodgrade) |
-| **OpenShift 4.x Cluster** | Installed & configured OpenShift (IPI/UPI), operators, MachineSets, custom SCCs, built-in monitoring | OpenShift Installer, oc CLI, operators (Ceph via ODF/OCS), GitOps (ArgoCD) | [Repo →](https://github.com/yourusername/openshift-deployment-blueprint) |
-<!-- | **GitOps / ArgoCD on Kubernetes/OpenShift** | (optional but very strong) GitOps-managed apps & infra | ArgoCD, Helm, Kustomize | Add if you have it | -->
+I specialize in enterprise Linux, virtualization, container platforms, infrastructure automation, storage, observability, high availability, and production troubleshooting.
 
-## 🔥 Highlights from Real Work
+> **Portfolio disclaimer:** Public lab/reference material only. No employer credentials, proprietary configurations, customer data, or confidential information are included.
 
-- Designed Ceph CRUSH map for SSD vs HDD tiering → achieved < 200ms p99 latency on RBD
-- Troubleshooted & fixed Ceph OSD flapping under high load (tuned bluestore, rocksdb)
-- Migrated workloads from old storage → Ceph RBD with zero downtime using volume snapshots
-- Hardened OpenShift: network policies, pod security, RBAC least privilege
-- Set up HA control plane + etcd backup strategy on Kubernetes
+## 🚀 What I Can Help With
 
-## 🧰 Tech Stack I Operate Daily
+| Area | Services |
+|---|---|
+| Linux | RHEL administration, hardening, patching, troubleshooting, performance |
+| VMware | ESXi, vCenter, HA, DRS, networking, SAN/datastores |
+| Kubernetes | Administration, workloads, RBAC, storage, networking, troubleshooting |
+| OpenShift | Administration, Routes, workloads, storage, troubleshooting, VMware deployments |
+| Automation | Ansible, Terraform, Bash, Python |
+| Storage | SAN, LUNs, multipathing, Ceph, Kubernetes CSI |
+| Security | SELinux, firewalld, SSH hardening, auditd, TLS |
+| Monitoring | Prometheus, Grafana, Zabbix, alerting |
+| CI/CD | Jenkins, GitLab CI/CD, containers |
+| HA | Pacemaker, Corosync, HAProxy, Keepalived |
 
-**Orchestration:** Kubernetes, OpenShift  
-**Storage:** Ceph (Rook/ODF), Longhorn, NFS  
-**CI/CD & GitOps:** GitLab, ArgoCD, Tekton  
-**IaC:** Terraform / OpenTofu, Ansible  
-**Observability:** Prometheus, Grafana, Loki, Alertmanager  
-**Networking:** Cilium, Calico, Multus  
-**Others:** Helm 3, Kustomize, cert-manager, Velero
+## ⭐ Featured Projects
 
-## 📊 Let's Connect
+- [☸️ Kubernetes HA Lab](projects/kubernetes-ha-lab) — HA control plane, VIP, RBAC, workloads, storage and troubleshooting
+- [🔴 OpenShift on VMware](projects/openshift-vmware) — UPI architecture, RHCOS, Ignition, HAProxy, DNS and certificates
+- [💾 Ceph + Kubernetes CSI](projects/ceph-kubernetes-csi) — RBD, CSI, PVCs and storage troubleshooting
+- [🖥️ VMware HA/DRS + SAN](projects/vmware-ha-drs-san) — vSphere, HA, DRS, VMkernel, SAN and multipathing
+- [🛡️ RHEL Security Hardening](projects/rhel-security-hardening) — SELinux, firewalld, SSH and auditd
+- [🟢 Pacemaker HA](projects/pacemaker-ha) — Corosync, Pacemaker and fencing concepts
+- [🤖 Ansible Patch Management](projects/ansible-patch-management) — controlled patching and validation
+- [📊 Prometheus + Grafana](projects/monitoring-stack) — infrastructure monitoring and alerting
+- [🔎 Linux Performance Case Study](projects/linux-performance-case-study) — evidence-driven troubleshooting
+- [💿 Backup Troubleshooting](projects/backup-troubleshooting) — control/data-path investigation
+- [☸️ Kubernetes Troubleshooting](projects/kubernetes-troubleshooting) — pods, nodes, networking, scheduling and storage
+- [🔄 Container CI/CD](projects/cicd-container-pipeline) — build, scan, registry, deploy and rollback concepts
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Zaki-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/zaki-zahid-a108087a/)  
-[![Email](https://img.shields.io/badge/Email-📧-orange?style=flat)](mailto:zaki_zahid@hotmail.com)
+## 🏗️ Reference Architecture
 
-<p align="center">
-  <i> • Last updated Feb 2026</i>
-</p>
+```text
+                         Git / CI-CD
+                             |
+                     Container Registry
+                             |
+          +------------------+------------------+
+          |                                     |
+    Kubernetes HA                         OpenShift
+          |                                     |
+          +------------------+------------------+
+                             |
+                      Ceph / SAN Storage
+                             |
+                       VMware vSphere
+
+             Prometheus / Grafana / Alerting
+
+       Automation: Ansible + Terraform + Bash/Python
+```
+
+## 🧠 Engineering Methodology
+
+**Understand → Assess → Design → Automate → Validate → Monitor → Document**
+
+I focus on stable, secure and maintainable solutions rather than temporary fixes.
+
+## 💼 Freelance Services
+
+Available for Linux/RHEL administration, VMware, Kubernetes/OpenShift, infrastructure automation, troubleshooting, storage, monitoring, security hardening, containerization and CI/CD.
+
+**Upwork:** https://www.upwork.com/
+
+## 📫 Contact
+
+**GitHub:** https://github.com/xackista
