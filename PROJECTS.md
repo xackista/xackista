@@ -11,9 +11,20 @@ This repository is designed as a technical evidence portfolio for infrastructure
 | [Kubernetes HA](projects/kubernetes-ha-lab) | HA control plane, API VIP, RBAC, workloads, storage and troubleshooting | Kubernetes administration |
 | [OpenShift on VMware](projects/openshift-vmware) | UPI, RHCOS, Ignition, DNS, HAProxy, certificates and VMware | OpenShift, Kubernetes platform deployment |
 | [VMware HA/DRS + SAN](projects/vmware-ha-drs-san) | vSphere, HA, DRS, VMkernel, SAN and multipathing | VMware, ESXi, vCenter, storage |
-| [Infrastructure Automation](projects/infrastructure-automation) | Ansible, Terraform, Linux baseline and security automation | Ansible, Terraform, DevOps automation |
+| [Infrastructure Automation](projects/infrastructure-automation) | Ansible roles, Terraform modules, Linux baseline and security automation | Ansible, Terraform, DevOps automation |
 | [Ceph + Kubernetes CSI](projects/ceph-kubernetes-csi) | RBD, CSI, CephX and storage troubleshooting | Ceph, Kubernetes storage |
 | [Monitoring](projects/monitoring-stack) | Prometheus, Grafana, alerting and incident runbooks | Monitoring, observability |
+
+## 🧩 Architecture & Evidence Layer
+
+The portfolio now includes architecture and operational evidence alongside the implementation files:
+
+- [Enterprise Infrastructure Architecture](docs/architecture/enterprise-infrastructure.md) — how VMware, Linux, Kubernetes/OpenShift, Ceph, automation, security and monitoring fit together.
+- [Kubernetes Architecture](projects/kubernetes-ha-platform/ARCHITECTURE.md) — HA control plane, etcd, workloads, CSI and troubleshooting flows.
+- [OpenShift UPI on VMware](projects/openshift-vmware/ARCHITECTURE.md) — RHCOS, Ignition, DNS, HAProxy/Keepalived and certificate troubleshooting.
+- [VMware HA/DRS + SAN](projects/vmware-ha-drs-san/ARCHITECTURE.md) — cluster, HA/DRS, VMkernel and SAN relationships.
+- [Ceph CSI Troubleshooting](projects/ceph-kubernetes-csi/TROUBLESHOOTING.md) — representative storage failure investigation.
+- [Monitoring Evidence Guide](projects/monitoring-stack/dashboards/README.md) — lab screenshot and dashboard evidence standards.
 
 ## 🔧 Additional Case Studies
 
@@ -32,3 +43,5 @@ This repository is designed as a technical evidence portfolio for infrastructure
 **Linux Administration → RHEL Security → Kubernetes → VMware/SAN → OpenShift → Automation → Monitoring → Ceph**
 
 The first three establish the core service offering; the remaining projects demonstrate senior-level breadth and specialized capabilities.
+
+> **Evidence policy:** This repository intentionally separates verified experience from public lab/reference material. No fabricated production screenshots, client names, credentials, proprietary configurations or unsupported performance claims are used.
