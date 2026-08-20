@@ -2,7 +2,7 @@
 
 ## Zaki Zahid — Senior Linux & DevOps Engineer
 
-**8+ years | Linux | RHEL | Infrastructure Security | VMware | Kubernetes | OpenShift | Ansible | Terraform | Ceph | CI/CD | Monitoring**
+**10+ years | Linux | RHEL | Infrastructure Security | VMware | Kubernetes | OpenShift | Ansible | Terraform | Ceph | CI/CD | Monitoring**
 
 I specialize in enterprise Linux administration, infrastructure security, virtualization, container platforms, automation, storage, observability, high availability and production troubleshooting.
 
