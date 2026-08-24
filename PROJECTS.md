@@ -4,16 +4,16 @@ This repository is organized as a **client-facing evidence portfolio** for Linux
 
 ## ⭐ Core Client Evidence
 
-| Project | Client problem demonstrated | Best-fit work |
-|---|---|---|
-| [Linux Administration](projects/linux-administration) | Production Linux failures, performance, storage, networking and services | Linux/RHEL administration, troubleshooting |
-| [RHEL Security Hardening](projects/rhel-security-hardening) | Linux security baseline and hardening requirements | SELinux, auditd, AIDE, CIS-oriented hardening |
-| [Kubernetes HA](projects/kubernetes-ha-lab) | Reliable Kubernetes platform and workload operations | Kubernetes administration |
-| [OpenShift on VMware](projects/openshift-vmware) | Enterprise OpenShift deployment and platform troubleshooting | OpenShift, RHCOS, VMware |
-| [VMware HA/DRS + SAN](projects/vmware-ha-drs-san) | Virtualization, availability and enterprise storage | VMware, ESXi, vCenter, SAN |
-| [Infrastructure Automation](projects/infrastructure-automation) | Repetitive manual infrastructure administration | Ansible, Terraform, Bash, automation |
-| [Ceph + Kubernetes CSI](projects/ceph-kubernetes-csi) | Persistent storage provisioning and storage failures | Ceph, CSI, Kubernetes storage |
-| [Monitoring](projects/monitoring-stack) | Lack of infrastructure visibility and actionable alerting | Prometheus, Grafana, Zabbix |
+| Project | Client problem demonstrated | Visual evidence | Best-fit work |
+|---|---|---|---|
+| [Linux Administration](projects/linux-administration) | Production Linux failures, performance, storage, networking and services | [Architecture + troubleshooting visual](projects/linux-administration/visuals/01-production-troubleshooting.svg) | Linux/RHEL administration, troubleshooting |
+| [RHEL Security Hardening](projects/rhel-security-hardening) | Linux security baseline and hardening requirements | [Security architecture visual](projects/rhel-security-hardening/visuals/01-security-hardening.svg) | SELinux, auditd, AIDE, CIS-oriented hardening |
+| [VMware HA/DRS + SAN](projects/vmware-ha-drs-san) | Virtualization, availability and enterprise storage | [vSphere architecture visual](projects/vmware-ha-drs-san/visuals/01-vsphere-ha-drs-san.svg) | VMware, ESXi, vCenter, SAN |
+| [Kubernetes HA](projects/kubernetes-ha-lab) | Reliable Kubernetes platform and workload operations | [Kubernetes HA visual](projects/kubernetes-ha-lab/visuals/01-kubernetes-ha.svg) | Kubernetes administration |
+| [OpenShift on VMware](projects/openshift-vmware) | Enterprise OpenShift deployment and platform troubleshooting | [OpenShift UPI visual](projects/openshift-vmware/visuals/01-openshift-upi-vmware.svg) | OpenShift, RHCOS, VMware |
+| [Infrastructure Automation](projects/infrastructure-automation) | Repetitive manual infrastructure administration | [Automation pipeline visual](projects/infrastructure-automation/visuals/01-automation-pipeline.svg) | Ansible, Terraform, Bash, automation |
+| [Ceph + Kubernetes CSI](projects/ceph-kubernetes-csi) | Persistent storage provisioning and storage failures | [Ceph CSI visual](projects/ceph-kubernetes-csi/visuals/01-ceph-csi-storage.svg) | Ceph, CSI, Kubernetes storage |
+| [Monitoring](projects/monitoring-stack) | Lack of infrastructure visibility and actionable alerting | [Observability visual](projects/monitoring-stack/visuals/01-observability.svg) | Prometheus, Grafana, Zabbix |
 
 ## 🔎 Supporting Case Studies
 
@@ -53,5 +53,7 @@ This repository is organized as a **client-facing evidence portfolio** for Linux
 Every major case study should progressively expose the same decision-making chain:
 
 **Problem → Environment → Evidence → Diagnosis → Root Cause → Remediation → Validation → Prevention**
+
+The standalone SVG visuals are intentionally documentation-style rather than decorative: they summarize architecture, operational flow, controls and client outcomes and are suitable for GitHub and Upwork portfolio attachments.
 
 Public material is intentionally separated from professional production experience. No fabricated client screenshots, credentials, customer data, private infrastructure details or unsupported performance claims are included.
