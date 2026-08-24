@@ -1,24 +1,36 @@
-# 🖥️ VMware HA/DRS + SAN — Infrastructure Design Lab
+# 🖥️ VMware HA/DRS + SAN — Enterprise Virtualization Evidence
 
-## Objective
-Demonstrate the complete virtualization stack: vCenter, ESXi, cluster availability, DRS, VMkernel networking, SAN LUNs, datastores and multipathing.
+## Client-facing case study
 
-## Architecture
+This project demonstrates the reasoning required to administer and troubleshoot a VMware vSphere environment spanning **vCenter, ESXi, HA, DRS, VMkernel networking, SAN LUNs, datastores and multipathing**.
+
+## 🏗️ Architecture
+
 ```text
-                     vCenter
-                    /        \
-                ESXi-01    ESXi-02
-                   |          |
-              VMkernel    VMkernel
-                   \          /
-                    SAN Fabric
-                        |
-                    SAN Array
-                        |
-                    VMFS Datastore
+                         vCenter
+                        /       \
+                    ESXi-01   ESXi-02
+                       |         |
+                   VMkernel   VMkernel
+                       \         /
+                        SAN Fabric
+                            |
+                         SAN Array
+                            |
+                       VMFS Datastore
 ```
 
-## VMkernel Checks
+## 🎯 What a client can verify here
+
+- vSphere cluster and host relationships
+- HA versus DRS operational roles
+- VMkernel network separation
+- SAN visibility and multipathing
+- Datastore investigation
+- Evidence-driven storage troubleshooting
+- Capacity and availability considerations
+
+## 🌐 VMkernel investigation
 
 ```bash
 esxcli network ip interface list
@@ -31,11 +43,29 @@ Typical logical networks:
 ```text
 Management
 vMotion
-Storage/iSCSI/NFS
+Storage / iSCSI / NFS
 Fault Tolerance (where used)
 ```
 
-## SAN Visibility
+## 💾 SAN troubleshooting path
+
+```text
+HBA
+ ↓
+Fabric / Zoning
+ ↓
+Array Masking
+ ↓
+LUN
+ ↓
+ESXi Device
+ ↓
+Multipathing
+ ↓
+Datastore
+```
+
+Useful evidence:
 
 ```bash
 esxcli storage core adapter list
@@ -44,38 +74,34 @@ esxcli storage filesystem list
 esxcli storage nmp device list
 ```
 
-Trace a storage issue:
+This prevents jumping directly to datastore changes before establishing whether the problem is HBA, fabric, zoning, masking, LUN visibility or path state.
 
-```text
-HBA → Fabric → Zoning → Array Masking → LUN → ESXi Path → Datastore
-```
+## 🟢 VMware HA
 
-## vSphere HA
+HA provides VM restart protection after eligible host failures.
 
-HA restarts eligible VMs after host failure.
+Operational questions include:
 
-Design questions:
+- Is sufficient failover capacity available?
+- Is admission control appropriate?
+- Are VM restart priorities sensible?
+- Are datastores accessible after host failure?
+- Are isolation responses appropriate?
 
-- Is spare capacity sufficient?
-- Is admission control configured?
-- Are restart priorities appropriate?
-- Is datastore accessibility redundant?
-- Are isolation responses suitable?
+## ⚖️ VMware DRS
 
-## DRS
+DRS evaluates host/VM placement to improve resource balance and enforce placement policies.
 
-DRS optimizes VM placement for resource balance and policy compliance.
+Review host capacity, VM reservations/limits, affinity rules and DRS recommendations before forcing manual placement changes.
 
-Review host/VM placement and DRS recommendations in vCenter.
-
-## Datastore Checks
+## 🗄️ Datastore investigation
 
 ```bash
 esxcli storage filesystem list
 esxcli storage vmfs extent list
 ```
 
-## Troubleshooting Example: Datastore Missing
+### Example: datastore missing
 
 ```bash
 esxcli storage core device list
@@ -83,4 +109,10 @@ esxcli storage core path list
 esxcli storage nmp device list
 ```
 
-Determine whether the problem is LUN visibility, path failure, zoning, masking, HBA or array-side before taking corrective action.
+Determine the failing layer before corrective action.
+
+## 💼 Client value
+
+This evidence is relevant to VMware administration, ESXi/vCenter troubleshooting, cluster availability, storage incidents, SAN connectivity, VM performance investigations and virtualization design reviews.
+
+**Skills:** VMware vSphere · ESXi · vCenter · HA · DRS · VMkernel · SAN · LUN · VMFS · Multipathing · Storage Troubleshooting
