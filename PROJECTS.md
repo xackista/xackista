@@ -1,47 +1,57 @@
-# Portfolio Project Index
+# Infrastructure Engineering Portfolio — Project Index
 
-This repository is designed as a technical evidence portfolio for infrastructure, Linux, security and DevOps services.
+This repository is organized as a **client-facing evidence portfolio** for Linux, infrastructure, virtualization, Kubernetes/OpenShift, security, storage and automation services.
 
-## ⭐ Client-Facing Portfolio
+## ⭐ Core Client Evidence
 
-| Project | Demonstrates | Best for Upwork jobs |
+| Project | Client problem demonstrated | Best-fit work |
 |---|---|---|
-| [Linux Administration](projects/linux-administration) | RHEL/Linux operations, performance and root-cause troubleshooting | Linux admin, server troubleshooting |
-| [RHEL Security Hardening](projects/rhel-security-hardening) | SELinux, firewalld, SSH, auditd, AIDE and Ansible | Linux security, CIS hardening, compliance |
-| [Kubernetes HA](projects/kubernetes-ha-lab) | HA control plane, API VIP, RBAC, workloads, storage and troubleshooting | Kubernetes administration |
-| [OpenShift on VMware](projects/openshift-vmware) | UPI, RHCOS, Ignition, DNS, HAProxy, certificates and VMware | OpenShift, Kubernetes platform deployment |
-| [VMware HA/DRS + SAN](projects/vmware-ha-drs-san) | vSphere, HA, DRS, VMkernel, SAN and multipathing | VMware, ESXi, vCenter, storage |
-| [Infrastructure Automation](projects/infrastructure-automation) | Ansible roles, Terraform modules, Linux baseline and security automation | Ansible, Terraform, DevOps automation |
-| [Ceph + Kubernetes CSI](projects/ceph-kubernetes-csi) | RBD, CSI, CephX and storage troubleshooting | Ceph, Kubernetes storage |
-| [Monitoring](projects/monitoring-stack) | Prometheus, Grafana, alerting and incident runbooks | Monitoring, observability |
+| [Linux Administration](projects/linux-administration) | Production Linux failures, performance, storage, networking and services | Linux/RHEL administration, troubleshooting |
+| [RHEL Security Hardening](projects/rhel-security-hardening) | Linux security baseline and hardening requirements | SELinux, auditd, AIDE, CIS-oriented hardening |
+| [Kubernetes HA](projects/kubernetes-ha-lab) | Reliable Kubernetes platform and workload operations | Kubernetes administration |
+| [OpenShift on VMware](projects/openshift-vmware) | Enterprise OpenShift deployment and platform troubleshooting | OpenShift, RHCOS, VMware |
+| [VMware HA/DRS + SAN](projects/vmware-ha-drs-san) | Virtualization, availability and enterprise storage | VMware, ESXi, vCenter, SAN |
+| [Infrastructure Automation](projects/infrastructure-automation) | Repetitive manual infrastructure administration | Ansible, Terraform, Bash, automation |
+| [Ceph + Kubernetes CSI](projects/ceph-kubernetes-csi) | Persistent storage provisioning and storage failures | Ceph, CSI, Kubernetes storage |
+| [Monitoring](projects/monitoring-stack) | Lack of infrastructure visibility and actionable alerting | Prometheus, Grafana, Zabbix |
 
-## 🧩 Architecture & Evidence Layer
+## 🔎 Supporting Case Studies
 
-The portfolio now includes architecture and operational evidence alongside the implementation files:
+- [Linux Performance](projects/linux-performance-case-study) — evidence-driven performance investigation
+- [Kubernetes Troubleshooting](projects/kubernetes-troubleshooting) — pods, nodes, scheduling, networking and storage failures
+- [Ansible Patch Management](projects/ansible-patch-management) — controlled patching and validation
+- [Terraform VMware](projects/terraform-vmware) — VMware infrastructure-as-code
+- [Pacemaker HA](projects/pacemaker-ha) — Corosync, Pacemaker, fencing and recovery
+- [Backup Troubleshooting](projects/backup-troubleshooting) — structured backup failure investigation
+- [Container CI/CD](projects/cicd-container-pipeline) — build, scan, deploy and rollback concepts
 
-- [Enterprise Infrastructure Architecture](docs/architecture/enterprise-infrastructure.md) — how VMware, Linux, Kubernetes/OpenShift, Ceph, automation, security and monitoring fit together.
-- [Kubernetes Architecture](projects/kubernetes-ha-platform/ARCHITECTURE.md) — HA control plane, etcd, workloads, CSI and troubleshooting flows.
-- [OpenShift UPI on VMware](projects/openshift-vmware/ARCHITECTURE.md) — RHCOS, Ignition, DNS, HAProxy/Keepalived and certificate troubleshooting.
+## 🏗️ Architecture Evidence
+
+- [Enterprise Infrastructure Architecture](docs/architecture/enterprise-infrastructure.md) — relationship between virtualization, Linux, Kubernetes/OpenShift, storage, automation, security and monitoring.
+- [Kubernetes Architecture](projects/kubernetes-ha-platform/ARCHITECTURE.md) — control plane, etcd, workloads, CSI and troubleshooting flows.
+- [OpenShift UPI on VMware](projects/openshift-vmware/ARCHITECTURE.md) — RHCOS, Ignition, DNS, HAProxy/Keepalived and certificate dependencies.
 - [VMware HA/DRS + SAN](projects/vmware-ha-drs-san/ARCHITECTURE.md) — cluster, HA/DRS, VMkernel and SAN relationships.
 - [Ceph CSI Troubleshooting](projects/ceph-kubernetes-csi/TROUBLESHOOTING.md) — representative storage failure investigation.
-- [Monitoring Evidence Guide](projects/monitoring-stack/dashboards/README.md) — lab screenshot and dashboard evidence standards.
+- [Monitoring Evidence Guide](projects/monitoring-stack/dashboards/README.md) — dashboard and evidence standards.
 
-## 🔧 Additional Case Studies
+## 🧭 Recommended Reading Paths
 
-| Project | Focus |
-|---|---|
-| [Pacemaker HA](projects/pacemaker-ha) | Corosync, Pacemaker, fencing and resource recovery |
-| [Ansible Patch Management](projects/ansible-patch-management) | Controlled patching and validation |
-| [Terraform VMware](projects/terraform-vmware) | VMware Infrastructure-as-Code |
-| [Linux Performance](projects/linux-performance-case-study) | Evidence-driven incident response |
-| [Backup Troubleshooting](projects/backup-troubleshooting) | Backup control/data-path investigation |
-| [Kubernetes Troubleshooting](projects/kubernetes-troubleshooting) | Pods, nodes, networking, scheduling and storage |
-| [Container CI/CD](projects/cicd-container-pipeline) | Build, scan, deploy and rollback concepts |
+**Linux client:** Linux Administration → Linux Performance → RHEL Security
 
-## Suggested Client Reading Order
+**VMware client:** VMware HA/DRS + SAN → Terraform VMware → Linux Administration
 
-**Linux Administration → RHEL Security → Kubernetes → VMware/SAN → OpenShift → Automation → Monitoring → Ceph**
+**Kubernetes client:** Kubernetes HA → Kubernetes Troubleshooting → Ceph + Kubernetes CSI
 
-The first three establish the core service offering; the remaining projects demonstrate senior-level breadth and specialized capabilities.
+**OpenShift client:** OpenShift on VMware → Kubernetes HA → Infrastructure Automation
 
-> **Evidence policy:** This repository intentionally separates verified experience from public lab/reference material. No fabricated production screenshots, client names, credentials, proprietary configurations or unsupported performance claims are used.
+**Security client:** RHEL Security → Linux Administration → Ansible Patch Management
+
+**Automation client:** Infrastructure Automation → Terraform VMware → Ansible Patch Management
+
+## Evidence Standard
+
+Every major case study should progressively expose the same decision-making chain:
+
+**Problem → Environment → Evidence → Diagnosis → Root Cause → Remediation → Validation → Prevention**
+
+Public material is intentionally separated from professional production experience. No fabricated client screenshots, credentials, customer data, private infrastructure details or unsupported performance claims are included.
