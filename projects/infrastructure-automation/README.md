@@ -1,10 +1,12 @@
-# ⚙️ Infrastructure Automation with Ansible & Terraform
+# ⚙️ Infrastructure Automation — Ansible + Terraform
 
-## Client-Facing Summary
+## Client-facing case study
 
-A production-oriented automation reference showing how infrastructure provisioning and Linux configuration can be made **repeatable, auditable and safer to operate**.
+A security-aware infrastructure automation pattern for turning repeatable Linux and VMware operations into version-controlled, auditable workflows.
 
-## Automation Model
+The goal is not automation for its own sake. The goal is **less configuration drift, safer changes, consistent baselines and easier recovery**.
+
+## 🏗️ Automation model
 
 ```text
 Terraform
@@ -17,14 +19,14 @@ Linux Baseline
    ↓
 Security Hardening
    ↓
-Application / Service Configuration
+Service / Application Configuration
    ↓
 Monitoring
    ↓
 Validation
 ```
 
-## Ansible Use Cases
+## 🧰 Ansible use cases
 
 - Linux baseline configuration
 - Package installation and updates
@@ -37,15 +39,15 @@ Validation
 - Monitoring agent deployment
 - Controlled patching
 
-## Terraform Use Cases
+## 🏗️ Terraform use cases
 
-- VM provisioning where the target virtualization provider supports it
-- Repeatable infrastructure definitions
+- Repeatable VM provisioning where the provider supports it
+- Infrastructure definitions as code
 - Variables and environment separation
 - Reusable modules
 - Infrastructure lifecycle documentation
 
-## Safe Automation Workflow
+## 🛡️ Safe automation workflow
 
 ```text
 Plan
@@ -60,10 +62,10 @@ Apply
  ↓
 Post-Checks
  ↓
-Report
+Report / Rollback if Required
 ```
 
-Example Ansible validation:
+Example validation:
 
 ```bash
 ansible-playbook --syntax-check site.yml
@@ -71,11 +73,11 @@ ansible-playbook site.yml --check --diff
 ansible-playbook site.yml
 ```
 
-## Security-First Configuration
+## 🔐 Security-first automation
 
-Automation should not only configure a server; it should establish a consistent security baseline. Examples include:
+Automation should establish a consistent security baseline as part of normal configuration management:
 
-- SELinux enforcing mode
+- SELinux enforcing where appropriate
 - firewalld policy
 - SSH hardening
 - auditd rules
@@ -83,21 +85,22 @@ Automation should not only configure a server; it should establish a consistent 
 - least-privilege accounts
 - time synchronization
 - controlled package repositories
+- explicit secrets-management boundaries
 
-## Design Principles
+## 🧠 Engineering principles
 
 - Idempotent configuration
 - Version-controlled infrastructure
 - Least privilege
 - Small blast radius
-- Explicit variables and secrets management
+- Explicit variables
+- Secrets kept outside source control
 - Pre/post validation
 - Documented rollback considerations
+- Reusable roles/modules rather than copy-paste configuration
 
-## Skills Demonstrated
+## 💼 Client value
 
-**Ansible | Terraform | RHEL | Linux | Bash | Python | Infrastructure-as-Code | Security Hardening | Patch Automation | Configuration Management**
+Useful for server fleet standardization, VM provisioning, secure Linux baselines, patch automation, configuration drift reduction, repeatable deployments and infrastructure-as-code initiatives.
 
-## Business Value
-
-Automation reduces configuration drift, improves consistency, shortens deployment time and makes infrastructure changes easier to audit and reproduce.
+**Skills:** Ansible · Terraform · RHEL · Linux · VMware · Bash · Python · Infrastructure-as-Code · Configuration Management · Security Hardening · Patch Automation
