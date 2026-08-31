@@ -2,7 +2,7 @@
 
 **Senior Linux & Infrastructure Engineer | RHEL | VMware | Kubernetes/OpenShift | Security | Automation**
 
-8+ years working with enterprise infrastructure, Linux administration, virtualization, container platforms, storage, automation, monitoring and production troubleshooting.
+10+ years working with enterprise infrastructure, Linux administration, virtualization, container platforms, storage, automation, monitoring and production troubleshooting.
 
 This repository is my **technical evidence layer** for freelance infrastructure work. It is organized around real client problems: diagnose the failure, identify root cause, implement the safest practical remediation, validate the result and document how to prevent recurrence.
 
